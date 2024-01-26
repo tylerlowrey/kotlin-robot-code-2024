@@ -52,6 +52,14 @@ repositories {
             .asFile
             .toURI()
     }
+
+    wpi.vendor.vendorRepos.forEach {
+        maven {
+            name = it.name
+            setUrl(it.url)
+        }
+    }
+
     project.repositories.mavenCentral()
 }
 
